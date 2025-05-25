@@ -1,12 +1,12 @@
 import matplotlib.pyplot as plt
 
-s1_x = -7.7
-s2_x = -7.7
-s1_y = 14.32
-s2_y = -14.32
+s1_x = -13.45
+s2_x = -13.45
+s1_y = 15.78
+s2_y = -15.78
 
 plt.plot([s1_x, s2_x], [s1_y, s2_y], 'go')
-plt.axis([-10, 10, -20, 20])
+plt.axis([-20, 20, -20, 20])
 ax = plt.gca()
 ax.spines['left'].set_position('center')
 ax.spines['bottom'].set_position('center')

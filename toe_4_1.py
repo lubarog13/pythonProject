@@ -6,9 +6,14 @@ def F_k (k):
         val = -0.5*k*np.pi
     else:
         val = -0.5*k*np.pi + np.pi
+    print(val % (2*np.pi))
     return 0 if val % (2*np.pi) == 0 else val
 
-print(f"{'k':<5}{'omega':<10}{'A_k':<20}{'F_k':<20}")
+A_k_1 = lambda k: A_k(k) * (160 / np.sqrt(np.pow(2.5*np.pi*k, 4) - 136.39*np.pow(2.5*np.pi*k, 2) + 184900))
+
+F_n = lambda k: -np.atan( (26.9 *2.5 *np.pi * k) / (430 - 6.25 * np.pow( np.pi* k, 2)))
+
+print(f"{'k':<5}{'omega':<10}{'A_k':<20}{'F_k':<20}{'F_н':<20}{'A_k_1':<20}{'Ф_k':<20}")
 print("-" * 45)
 for k in range(0, 8):
-    print(f"{k:<5}{2.5*k:<10}{A_k(k):<20.5f}{F_k(k):<20.5f}")
+    print(f"{k:<5}{2.5*k:<10}{A_k(k):<20.5f}{F_k(k):<20.5f}{F_n(k):<20.5f}{A_k_1(k):<20.5f}{F_n(k)+F_k(k):<20.5f}")
