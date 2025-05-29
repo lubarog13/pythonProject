@@ -14,5 +14,5 @@ F_n = lambda k: -np.atan( (26.9 *2.5 *np.pi * k) / (430 - 6.25 * np.pow( np.pi* 
 
 print(f"{'k':<5}{'omega':<10}{'A_k':<20}{'F_k':<20}{'F_н':<20}{'A_k_1':<20}{'Ф_k':<20}")
 print("-" * 45)
-for k in range(0, 8):
+for k in range(0, 9):
     print(f"{k:<5}{2.5*k:<10}{A_k(k):<20.5f}{F_k(k):<20.5f}{F_n(k):<20.5f}{A_k_1(k):<20.5f}{F_n(k)+F_k(k):<20.5f}")
