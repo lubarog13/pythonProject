@@ -2,11 +2,12 @@ import numpy as np
 
 A_k = lambda k: np.abs(25 * np.pi / (6.25 * np.pow(np.pi, 2) - 6.25 * np.pow(np.pi*k, 2) ) * np.cos(k * np.pi / 2))
 def F_k (k):
-    if np.cos(0.5*k * np.pi) >= 0:
-        val = -0.5*k*np.pi
-    else:
-        val = -0.5*k*np.pi + np.pi
-    return val
+    # if np.cos(0.5*k * np.pi) > 0:
+    #     val = -0.5*k*np.pi
+    # else:
+    #     val = -0.5*k*np.pi - np.pi / 2
+    # return val
+    return -0.5*k*np.pi 
 
 A_k_1 = lambda k: A_k(k) * (160 / np.sqrt(np.pow(2.5*np.pi*k, 4) - 136.39*np.pow(2.5*np.pi*k, 2) + 184900))
 

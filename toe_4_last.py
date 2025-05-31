@@ -10,7 +10,7 @@ def i_t(t):
 def furier_I(x):
     if (x <0):
         return 0
-    return 0.474 / 2  + 0.377*np.cos(2.5*np.pi*x-2.09) + 0.147*np.cos(5*np.pi*x - 1.16)
+    return 0.474 / 2  + 0.377*np.cos(2.5*np.pi*x-2.09) + 0.147 *np.cos(5*np.pi*x - 4.303)
 
 def approx_I(x):
     if (x < 0 or x > 0.4):
@@ -27,7 +27,7 @@ y = [furier_I(i) for i in x]
 y_0 = [i_t(i) for i in x]
 y_approx = [approx_I(i) for i in x]
 
-plt.plot(x, y, label='Фурье', linestyle='--')
+plt.plot(x, y, label='Фурье')
 plt.plot(x, y_0, label='i(н)', linestyle='--')
 # plt.plot(x, y_approx, label='Аппроксимация рядом Фурье')
 plt.legend()
