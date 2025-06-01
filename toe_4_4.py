@@ -10,7 +10,7 @@ def I_0(x):
 def furier_I(x):
     if (x <0):
         return 0
-    return 0.635 + np.cos(2.5*np.pi*x-0.5*np.pi) + 0.42*np.cos(5*np.pi*x - np.pi) + 0.084 * np.cos(10*np.pi*x - np.pi) + 0.036 * np.cos(15*np.pi*x - np.pi)
+    return 0.635 + np.cos(2.5*np.pi*x-0.5*np.pi) + 0.42*np.cos(5*np.pi*x - np.pi) + 0.084 * np.cos(10*np.pi*x - 2*np.pi) + 0.036 * np.cos(15*np.pi*x - 3*np.pi)
 def approx_I(x):
     if (x < 0 or x > 0.4):
         return 0

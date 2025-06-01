@@ -2,10 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def i_t(t):
-    if t < 0 or t > 0.4:
-        return 0
-    else:
+    if t < 0.4:
         return (-0.375*np.cos( 7.85*t ) + 0.65*np.sin( 7.85*t) + 0.37 * np.exp(-13.45*t)*np.cos( 15.78*t ) - 0.0057*np.exp(-13.45*t)*np.sin( 15.78*t ))
+    else:
+        return (-0.375*np.cos( 7.85*t ) + 0.65*np.sin( 7.85*t) + 0.37 * np.exp(-13.45*t)*np.cos( 15.78*t ) - 0.0057*np.exp(-13.45*t)*np.sin( 15.78*t )) + \
+    (-0.375*np.cos( 7.85*(t-0.4) ) + 0.65*np.sin( 7.85*(t-0.4) ) + 0.37 * np.exp(-13.45*(t-0.4))*np.cos( 15.78*(t-0.4) ) - 0.0057*np.exp(-13.45*(t-0.4))*np.sin( 15.78*(t-0.4) ))
     
 def furier_I(x):
     if (x <0):
