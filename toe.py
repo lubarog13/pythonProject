@@ -22,7 +22,6 @@ def euler(func, x_0, y_0, delta, n):
 
 
 from matplotlib import pyplot as plt
-plt.style.use('dark_background')
 
 funcU = lambda u, i: -14.4*u + 20 * i - 115.2
 funcI = lambda u, i: -12.5*u - 12.5 * i + 37.5
@@ -61,10 +60,10 @@ def plot_two_functions_euler(func1, func2, x_0, y_0, max, delta, labels, index):
     path2 = np.array(path2)
     if index=='x':
         plt.plot(path1[:, 0], path1[:, 1], color='r',
-             label=labels[0])
+             label=labels[0], linestyle='--')
     else:
         plt.plot(path2[:, 0], path2[:, 1], color='b',
-             label=labels[1])
+             label=labels[1], linestyle='--')
 
 
 def plot_good(func, x_0, y_0, b):
@@ -92,8 +91,8 @@ def iterate_plot(euler_method, func, x_0, y_0, b):
 import numpy as np
 import matplotlib.pyplot as plt
 x = np.arange(0, delta*200, delta)
-plt.plot(x, -144/43*np.exp(-13.45*x)*np.cos(0.15*np.sqrt(11071)*x) -32280/11309 *np.exp(-13.45*x)*np.sin(0.15*np.sqrt(11071)*x) + 198/43, label="iL")
-# plt.plot(x, 144/43*np.exp(-13.45*x)*np.cos(0.15*np.sqrt(11071)*x) -50280/11309 *np.exp(-13.45*x)*np.sin(0.15*np.sqrt(11071)*x) - 69/43, label="Uc")
-plot_two_functions_euler(funcU, funcI, u0, i0, delta*200, delta, ['Uc(эйлер)', 'iL(эйлер)'], 'y')
+#plt.plot(x, -144/43*np.exp(-13.45*x)*np.cos(0.15*np.sqrt(11071)*x) -32280/11309 *np.exp(-13.45*x)*np.sin(0.15*np.sqrt(11071)*x) + 198/43, label="iL", color='r')
+plt.plot(x, 144/43*np.exp(-13.45*x)*np.cos(0.15*np.sqrt(11071)*x) -50280/11309 *np.exp(-13.45*x)*np.sin(0.15*np.sqrt(11071)*x) - 69/43, label="Uc")
+plot_two_functions_euler(funcU, funcI, u0, i0, delta*200, delta, ['Uc(эйлер)', 'iL(эйлер)'], 'x')
 plt.legend()
 plt.show()
